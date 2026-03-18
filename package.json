@@ -32,7 +32,7 @@
     "build:server": "esbuild src/index.ts --bundle --platform=node --target=node20 --format=esm --outfile=dist/index.js --external:@modelcontextprotocol/sdk --external:@stellar/stellar-sdk --external:zod --external:dotenv --external:express --external:cors --banner:js=\"#!/usr/bin/env node\"",
     "deploy-passkey": "tsx deploy-wallet.ts",
     "dev": "esbuild src/index.ts --bundle --platform=node --target=node20 --format=esm --outfile=dist/index.js --external:@modelcontextprotocol/sdk --external:@stellar/stellar-sdk --external:zod --external:dotenv --external:express --external:cors --banner:js=\"#!/usr/bin/env node\" --watch",
-    "start": "node dist/index.js",
+    "start": "USE_HTTP=true PORT=3000 node dist/index.js",
     "start:http": "USE_HTTP=true PORT=3000 node dist/index.js",
     "typecheck": "tsc --noEmit"
   },
